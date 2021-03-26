@@ -27,7 +27,7 @@ export const ContentWrapper = styled.div`
     font-size: 18px;
     font-weight: 700;
     margin: 56px auto 30px;
-    color: ${themeGet('primary.0', '#008489')};
+    color: ${themeGet('primary.0', '#616266')};
   }
 
   a {
@@ -41,8 +41,8 @@ export const ContentWrapper = styled.div`
     align-items: center;
     border-radius: 3px;
     color: ${themeGet('color.1', '#ffffff')};
-    border-color: ${themeGet('primary.0', '#008489')};
-    background-color: ${themeGet('primary.0', '#008489')};
+    border-color: ${themeGet('primary.0', '#616266')};
+    background-color: ${themeGet('primary.0', '#616266')};
     &:focus,
     &:hover {
       outline: 0;

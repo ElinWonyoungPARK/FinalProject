@@ -25,7 +25,7 @@ export default function ForgetPassWord() {
         <Logo
           withLink
           linkTo="/"
-          src="/images/logo-alt.svg"
+          src=""
           title="TripFinder."
         />
         <Title>Welcome Back</Title>

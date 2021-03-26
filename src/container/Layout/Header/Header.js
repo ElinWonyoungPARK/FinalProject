@@ -65,8 +65,7 @@ export default withRouter(function Header({ location }) {
                 <Logo
                   withLink
                   linkTo="/"
-                  src="/images/logo-alt.svg"
-                  title="TripFinder."
+                  src="/images/cart-logo.png"
                 />
               </>
             }
@@ -88,8 +87,7 @@ export default withRouter(function Header({ location }) {
                 <Logo
                   withLink
                   linkTo="/"
-                  src="/images/logo-alt.svg"
-                  title="TripFinder."
+                  src="/images/cart-logo.png"
                 />
               </>
               <NavbarSearch />

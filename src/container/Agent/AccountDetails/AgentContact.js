@@ -26,8 +26,6 @@ const AgentContact = () => {
             <Text content={cell_number} />
             <Heading as="h3" content="Email" />
             <Text content={email} />
-            <Heading as="h3" content="Address" />
-            <Text content={agent_location.formattedAddress} />
           </ContactDetails>
         </Col>
       </Row>

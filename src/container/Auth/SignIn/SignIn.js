@@ -20,21 +20,20 @@ const SignIn = () => {
         <Logo
           withLink
           linkTo="/"
-          src="/images/logo-alt.svg"
-          title="TripFinder."
+          src="/images/cart-logo.png"
         />
         <Title>Welcome Back</Title>
-        <TitleInfo>Please log into your account</TitleInfo>
+        <TitleInfo>로그인 정보를 입력해주세요</TitleInfo>
         <SignInForm />
-        <Divider>Or log in with </Divider>
+        <Divider>SNS로 로그인하기 </Divider>
         <SocialLogin />
         <Text>
-          Don't Have an Account?&nbsp;
-          <Link to={REGISTRATION_PAGE}>Registration</Link>
+          계정이 없으신가요?&nbsp;
+          <Link to={REGISTRATION_PAGE}>회원가입하기</Link>
         </Text>
       </FormWrapper>
       <BannerWrapper>
-        <img src="/images/login-page-bg.jpg" alt="Auth page banner" />
+        <img src="/images/signup_page_bg.jpg" alt="Auth page banner" />
       </BannerWrapper>
     </Wrapper>
   );

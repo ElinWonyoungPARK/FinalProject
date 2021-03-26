@@ -53,11 +53,11 @@ export const CarouselSection = styled.div`
     svg {
       height: 22px;
       width: auto;
-      fill: ${themeGet('primary.0', '#008489')};
+      fill: ${themeGet('primary.0', '#616266')};
     }
 
     &:hover {
-      background-color: ${themeGet('primary.0', '#008489')};
+      background-color: ${themeGet('primary.0', '#616266')};
       svg {
         fill: ${themeGet('color.1', '#ffffff')};
       }

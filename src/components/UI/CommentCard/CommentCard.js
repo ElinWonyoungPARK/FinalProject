@@ -41,7 +41,7 @@ export default class App extends React.Component {
                       'dddd, MMMM Do YYYY, h:mm:ss a'
                     )}
                   >
-                    <span>Reviewd - {moment(postTime).fromNow()}</span>
+                    <span>작성일 - {moment(postTime).fromNow()}</span>
                   </Popover>
                 </div>
               </div>

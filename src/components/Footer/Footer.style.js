@@ -73,7 +73,7 @@ export const MenuWrapper = styled.div`
         color: ${themeGet('text.0', '#2C2C2C')};
         transition: color 0.2s ease-in-out;
         &:hover {
-          color: ${themeGet('primary.0', '#008489')};
+          color: ${themeGet('primary.0', '#616266')};
         }
       }
     }

@@ -130,7 +130,7 @@ export const FormWrapper = styled.div`
     min-width: 157px;
     height: 60px;
     color: ${themeGet('color.1', '#ffffff')};
-    background-color: ${themeGet('primary.0', '#008489')};
+    background-color: ${themeGet('primary.0', '#616266')};
     border-radius: 0 3px 3px 0;
     border: 0;
     box-shadow: none;
@@ -448,7 +448,7 @@ export const ComponentWrapper = styled.div`
     &.user-friends {
       left: 15px;
       right: auto;
-      fill: ${themeGet('primary.0', '#008489')};
+      fill: ${themeGet('primary.0', '#616266')};
     }
 
     &.calendar {

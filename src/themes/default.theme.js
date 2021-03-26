@@ -1,7 +1,7 @@
 const defaultTheme = {
   breakpoints: ['481px', '768px', '992px', '1201px', '1441px'],
   primary: [
-    '#008489', // 0: Default
+    '#616266', // 0: Default
     '#399C9F', // 1: Chart
   ],
   color: [
@@ -20,7 +20,7 @@ const defaultTheme = {
     '#e4405f', // 12: Instagram
     '#E2E2E2', // 13: Range Color
     '#00ACEE', // 14: Github Color
-    '#FFCB2B', // 15: Firebase Color
+    '#1DDB16', // 15: Naver Color
     '#484848', // 16: Link button
   ],
   warning: [

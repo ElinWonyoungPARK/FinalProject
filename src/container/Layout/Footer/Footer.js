@@ -10,8 +10,7 @@ const Footer = () => {
         <Logo
           withLink
           linkTo="/"
-          src="/images/logo-alt.svg"
-          title="TripFinder."
+          src="/images/cart-logo.png"
         />
       }
       menu={<FooterMenu />}

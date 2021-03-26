@@ -9,7 +9,7 @@ const SocialLogin = () => {
   const [state, setState] = useState({
     facebook: false,
     github: false,
-    firebase: false,
+    Naver: false,
     google: false,
   });
   const handleSocialAuth = (key) => {
@@ -31,7 +31,6 @@ const SocialLogin = () => {
 
   return (
     <>
-    <h2>{count}</h2>
     <div>
       <Row gutter={16}>
         <Col span={12}>
@@ -64,14 +63,14 @@ const SocialLogin = () => {
       <Row gutter={16} style={{ marginBottom: '37px' }}>
         <Col span={12}>
           <Button
-            loading={state.firebase}
-            className="firebase-btn"
+            loading={state.Naver}
+            className="Naver-btn"
             type="primary"
             style={{ width: '100%', marginBottom: 16 }}
             size="large"
-            onClick={() => handleSocialAuth('firebase')}
+            onClick={() => handleSocialAuth('Naver')}
           >
-            Firebase
+            Naver
           </Button>
         </Col>
         <Col span={12}>

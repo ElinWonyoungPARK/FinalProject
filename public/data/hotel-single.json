@@ -73,114 +73,48 @@
 		"reviews": [
 			{
 				"reviewID": 77370,
-				"reviewTitle": "Quia asperiores et ducimus.",
-				"reviewText": "Accusamus cumque architecto itaque porro sint nihil ipsam totam ducimus. Doloremque fuga fuga ab vel neque id eum et voluptatibus. Qui eius quos quas mollitia enim vel provident facere. Hic nobis sunt aut sed qui dolore nihil accusantium.",
+				"reviewTitle": "앙리 마티스 전시",
+				"reviewText": "전시 구성도 좋았고 마지막 스테인드글라스 섹션 촬영 가능한것도 마음에 들었습니다! 다만 주말이여서 그런지 사람이 너무 많아가지고 일렬로 줄서다시피해서 관람했던게 불편했습니다. 코로나 시국인만큼 더더욱 입장인원 제한해서 쾌적한 전시환경을 만들면 좋았겠다는 생각입니다.",
 				"reviewAuthorId": 39531,
-				"reviewAuthorFirstName": "Terrance",
-				"reviewAuthorLastName": "Wolff",
-				"reviewAuthorEmail": "Reed_Okuneva@yahoo.com",
+				"reviewAuthorFirstName": "shuk***",
+				"reviewAuthorLastName": "",
+				"reviewAuthorEmail": "shuk***@gmail.com",
 				"reviewAuthorPic": {
 					"id": 984,
 					"url": "http://s3.amazonaws.com/redqteam.com/tripfinder-images/hotel-single7.jpg"
 				},
-				"reviewDate": "2018-11-25T01:20:05.316Z",
-				"reviewFields": [
-					{
-						"id": 56278,
-						"rating": 4,
-						"ratingFieldName": "Service"
-					},
-					{
-						"id": 296,
-						"rating": 1,
-						"ratingFieldName": "Room"
-					},
-					{
-						"id": 30575,
-						"rating": 3,
-						"ratingFieldName": "Cleanness"
-					},
-					{
-						"id": 11857,
-						"rating": 3,
-						"ratingFieldName": "Food"
-					}
-				]
+				"reviewDate": "2021-03"
 			},
 			{
 				"reviewID": 23288,
-				"reviewTitle": "Qui unde exercitationem quis nulla ut earum qui ea sit.",
-				"reviewText": "Distinctio at aut perspiciatis dolores. Sed sit ut labore nostrum. Est amet repellat dolore maiores id eligendi eveniet autem praesentium. Porro illo perspiciatis repellat atque laborum voluptatem tempore nobis odio. Fugiat et molestias ab id temporibus dignissimos culpa fugit. Nulla magni iusto dolores at.",
+				"reviewTitle": "앙리 마티스 전시",
+				"reviewText": "도슨트를 들으러 제시간에 갔지만 저의 경우엔 억야이나 톤이 맞지않아서 따로 감상했습니다. 보는내내 즐겁고 추천해준 재즈 음악과 함께하니 너무 즐거운 전시였습니다",
 				"reviewAuthorId": 85017,
-				"reviewAuthorFirstName": "Harmon",
-				"reviewAuthorLastName": "Bechtelar",
-				"reviewAuthorEmail": "Jacklyn.Corwin49@yahoo.com",
+				"reviewAuthorFirstName": "minh***",
+				"reviewAuthorLastName": "",
+				"reviewAuthorEmail": "minh***@yahoo.com",
 				"reviewAuthorPic": {
 					"id": 18652,
 					"url": "http://s3.amazonaws.com/redqteam.com/tripfinder-images/hotel-single3.jpg"
 				},
-				"reviewDate": "2018-02-28T00:50:14.479Z",
-				"reviewFields": [
-					{
-						"id": 50043,
-						"rating": 1,
-						"ratingFieldName": "Service"
-					},
-					{
-						"id": 44884,
-						"rating": 3,
-						"ratingFieldName": "Room"
-					},
-					{
-						"id": 15340,
-						"rating": 3,
-						"ratingFieldName": "Cleanness"
-					},
-					{
-						"id": 79946,
-						"rating": 3,
-						"ratingFieldName": "Food"
-					}
-				]
+				"reviewDate": "2021-03"
 			},
 			{
 				"reviewID": 57342,
-				"reviewTitle": "Occaecati corrupti beatae rerum et fugit dolores dolor dolorem.",
-				"reviewText": "Cum velit laborum consectetur facere dignissimos est nulla et. Aperiam repellendus exercitationem et possimus ut veniam temporibus. Vel excepturi aut commodi inventore eius aliquam eos corporis deleniti. Sequi tempore exercitationem esse quis deserunt rerum quia. Aut optio laboriosam aliquid qui modi quia esse voluptas.",
+				"reviewTitle": "앙리 마티스 전시",
+				"reviewText": "최근에 본 전시 중에 가장 만족스러웠어요 볼거리도 많고 참여할 수 있는 코너부터 사진촬영이 가능한 섹션까지, 너무나 좋았습니다",
 				"reviewAuthorId": 52646,
-				"reviewAuthorFirstName": "Isom",
-				"reviewAuthorLastName": "Conn",
-				"reviewAuthorEmail": "Mozelle34@yahoo.com",
+				"reviewAuthorFirstName": "lsg2***",
+				"reviewAuthorLastName": "",
+				"reviewAuthorEmail": "lsg2***@yahoo.com",
 				"reviewAuthorPic": {
 					"id": 44935,
 					"url": "http://s3.amazonaws.com/redqteam.com/tripfinder-images/hotel-single6.jpg"
 				},
-				"reviewDate": "2018-05-26T06:11:41.520Z",
-				"reviewFields": [
-					{
-						"id": 71865,
-						"rating": 1,
-						"ratingFieldName": "Service"
-					},
-					{
-						"id": 57470,
-						"rating": 5,
-						"ratingFieldName": "Room"
-					},
-					{
-						"id": 98655,
-						"rating": 3,
-						"ratingFieldName": "Cleanness"
-					},
-					{
-						"id": 98138,
-						"rating": 4,
-						"ratingFieldName": "Food"
-					}
-				]
+				"reviewDate": "2021-03"
 			}
 		],
-		"createdAt": "2019-01-21T23:53:06.114Z",
-		"updatedAt": "2019-01-23T00:38:13.199Z"
+		"createdAt": "2021-03",
+		"updatedAt": "2021-03"
 	}
 ]

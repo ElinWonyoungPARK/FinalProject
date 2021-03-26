@@ -18,7 +18,7 @@ export const ImageUpload = styled.div`
     font-size: 15px;
     font-weight: 700;
     color: #fff;
-    background-color: #008489;
+    background-color: #616266;
     border-radius: 3px;
     padding: 8px 15px;
     margin-left: 30px;

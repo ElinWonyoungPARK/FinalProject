@@ -29,7 +29,7 @@ const CommentBox = (props) => {
           </Fragment>
         );
       })
-    : 'No Review Found';
+    : '검색 결과가 없습니다.';
 };
 
 const Review = (props) => {
@@ -62,7 +62,7 @@ const Review = (props) => {
         <HeaderSection>
           <RatingStatus>
             <Heading
-              content={`${ratingCount} Reviews`}
+              content={`${ratingCount} 이용평점`}
               {...statusHeadingStyle}
             />
             <IoIosStar />
@@ -73,11 +73,11 @@ const Review = (props) => {
           </RatingStatus>
           <RatingSearch>
             <Search
-              placeholder="Search reviews"
+              placeholder="리뷰검색"
               onSearch={(value) => console.log(value)}
             />
             <Button type="primary" onClick={() => handleModalOpen('review')}>
-              Write a Review
+              이용후기 작성
             </Button>
             <Modal
               visible={state.review}
@@ -87,17 +87,17 @@ const Review = (props) => {
               maskStyle={{ backgroundColor: 'rgba(255, 255, 255, 0.9)' }}
               wrapClassName="review_modal"
             >
-              <ModalTitle>Write your review here</ModalTitle>
+              <ModalTitle>감상평을 작성해주세요</ModalTitle>
               <ReviewForm />
             </Modal>
           </RatingSearch>
         </HeaderSection>
         <Row gutter={20}>
           <Col sm={12} lg={9}>
-            <Heading content="Traveler Ratings" {...filterHeadingStyle} />
+            <Heading content="점수별 관람객 수" {...filterHeadingStyle} />
             <FilterElement>
               <Checkbox onChange={onChange}>
-                <Text content="Exccellent" as="span" {...ratingLabelStyle} />
+                <Text content="5점" as="span" {...ratingLabelStyle} />
                 <RatingWrapper>
                   <IoIosStar />
                   <IoIosStar />
@@ -112,7 +112,7 @@ const Review = (props) => {
 
             <FilterElement>
               <Checkbox onChange={onChange}>
-                <Text content="Very Good" as="span" {...ratingLabelStyle} />
+                <Text content="4점" as="span" {...ratingLabelStyle} />
                 <RatingWrapper>
                   <IoIosStar />
                   <IoIosStar />
@@ -127,7 +127,7 @@ const Review = (props) => {
 
             <FilterElement>
               <Checkbox onChange={onChange}>
-                <Text content="Average" as="span" {...ratingLabelStyle} />
+                <Text content="3점" as="span" {...ratingLabelStyle} />
                 <RatingWrapper>
                   <IoIosStar />
                   <IoIosStar />
@@ -142,7 +142,7 @@ const Review = (props) => {
 
             <FilterElement>
               <Checkbox onChange={onChange}>
-                <Text content="Poor" as="span" {...ratingLabelStyle} />
+                <Text content="2점" as="span" {...ratingLabelStyle} />
                 <RatingWrapper>
                   <IoIosStar />
                   <IoIosStar />
@@ -155,94 +155,31 @@ const Review = (props) => {
             </FilterElement>
             {/* End of Filter Element */}
           </Col>
-
           <Col sm={12} lg={5}>
-            <Heading content="Traveler Type" {...filterHeadingStyle} />
+            <Heading content="연령대" {...filterHeadingStyle} />
             <FilterElement>
               <Checkbox onChange={onChange}>
-                <Text content="Families" as="span" {...ratingLabelStyle} />
+                <Text content="전 연령" as="span" {...ratingLabelStyle} />
               </Checkbox>
             </FilterElement>
             {/* End of Filter Element */}
 
             <FilterElement>
               <Checkbox onChange={onChange}>
-                <Text content="Couples" as="span" {...ratingLabelStyle} />
+                <Text content="10대이하" as="span" {...ratingLabelStyle} />
               </Checkbox>
             </FilterElement>
             {/* End of Filter Element */}
 
             <FilterElement>
               <Checkbox onChange={onChange}>
-                <Text content="Solo" as="span" {...ratingLabelStyle} />
-              </Checkbox>
-            </FilterElement>
-            {/* End of Filter Element */}
-
-            <FilterElement>
-              <Checkbox onChange={onChange}>
-                <Text content="Business" as="span" {...ratingLabelStyle} />
-              </Checkbox>
-            </FilterElement>
-            {/* End of Filter Element */}
-          </Col>
-
-          <Col sm={12} lg={5}>
-            <Heading content="Time Of Year" {...filterHeadingStyle} />
-            <FilterElement>
-              <Checkbox onChange={onChange}>
-                <Text content="Jan-Mar" as="span" {...ratingLabelStyle} />
-              </Checkbox>
-            </FilterElement>
-            {/* End of Filter Element */}
-
-            <FilterElement>
-              <Checkbox onChange={onChange}>
-                <Text content="Apr-Jun" as="span" {...ratingLabelStyle} />
-              </Checkbox>
-            </FilterElement>
-            {/* End of Filter Element */}
-
-            <FilterElement>
-              <Checkbox onChange={onChange}>
-                <Text content="Jul-Sep" as="span" {...ratingLabelStyle} />
-              </Checkbox>
-            </FilterElement>
-            {/* End of Filter Element */}
-
-            <FilterElement>
-              <Checkbox onChange={onChange}>
-                <Text content="Oct-Dec" as="span" {...ratingLabelStyle} />
-              </Checkbox>
-            </FilterElement>
-            {/* End of Filter Element */}
-          </Col>
-
-          <Col sm={12} lg={5}>
-            <Heading content="Languages" {...filterHeadingStyle} />
-            <FilterElement>
-              <Checkbox onChange={onChange}>
-                <Text content="All Languages" as="span" {...ratingLabelStyle} />
-              </Checkbox>
-            </FilterElement>
-            {/* End of Filter Element */}
-
-            <FilterElement>
-              <Checkbox onChange={onChange}>
-                <Text content="English" as="span" {...ratingLabelStyle} />
-              </Checkbox>
-            </FilterElement>
-            {/* End of Filter Element */}
-
-            <FilterElement>
-              <Checkbox onChange={onChange}>
-                <Text content="Spanish" as="span" {...ratingLabelStyle} />
+                <Text content="20대" as="span" {...ratingLabelStyle} />
               </Checkbox>
             </FilterElement>
             {/* End of Filter Element */}
 
             <TextButton onClick={() => handleModalOpen('language')}>
-              More Language <IoIosArrowDown />
+              더보기 <IoIosArrowDown />
             </TextButton>
 
             <Modal
@@ -253,11 +190,11 @@ const Review = (props) => {
               maskStyle={{ backgroundColor: 'rgba(255, 255, 255, 0.8)' }}
               wrapClassName="language_modal"
             >
-              <Heading content="Languages" {...filterHeadingStyle} />
+              <Heading content="연령대" {...filterHeadingStyle} />
               <FilterElement>
                 <Checkbox onChange={onChange}>
                   <Text
-                    content="All Languages"
+                    content="전 연령"
                     as="span"
                     {...ratingLabelStyle}
                   />
@@ -267,7 +204,7 @@ const Review = (props) => {
 
               <FilterElement>
                 <Checkbox onChange={onChange}>
-                  <Text content="English" as="span" {...ratingLabelStyle} />
+                  <Text content="10대 이하" as="span" {...ratingLabelStyle} />
                 </Checkbox>
               </FilterElement>
               {/* End of Filter Element */}
@@ -275,7 +212,7 @@ const Review = (props) => {
               <FilterElement>
                 <Checkbox onChange={onChange}>
                   <Text
-                    content="Chinese (Sim.)"
+                    content="20대"
                     as="span"
                     {...ratingLabelStyle}
                   />
@@ -286,7 +223,7 @@ const Review = (props) => {
               <FilterElement>
                 <Checkbox onChange={onChange}>
                   <Text
-                    content="Chinese (Trad.)"
+                    content="30대"
                     as="span"
                     {...ratingLabelStyle}
                   />
@@ -296,35 +233,35 @@ const Review = (props) => {
 
               <FilterElement>
                 <Checkbox onChange={onChange}>
-                  <Text content="Spanish" as="span" {...ratingLabelStyle} />
+                  <Text content="40대" as="span" {...ratingLabelStyle} />
                 </Checkbox>
               </FilterElement>
               {/* End of Filter Element */}
 
               <FilterElement>
                 <Checkbox onChange={onChange}>
-                  <Text content="German" as="span" {...ratingLabelStyle} />
+                  <Text content="50대" as="span" {...ratingLabelStyle} />
                 </Checkbox>
               </FilterElement>
               {/* End of Filter Element */}
 
               <FilterElement>
                 <Checkbox onChange={onChange}>
-                  <Text content="Italian" as="span" {...ratingLabelStyle} />
+                  <Text content="60대" as="span" {...ratingLabelStyle} />
                 </Checkbox>
               </FilterElement>
               {/* End of Filter Element */}
 
               <FilterElement>
                 <Checkbox onChange={onChange}>
-                  <Text content="French" as="span" {...ratingLabelStyle} />
+                  <Text content="70대" as="span" {...ratingLabelStyle} />
                 </Checkbox>
               </FilterElement>
               {/* End of Filter Element */}
 
               <FilterElement>
                 <Checkbox onChange={onChange}>
-                  <Text content="Russian" as="span" {...ratingLabelStyle} />
+                  <Text content="80대" as="span" {...ratingLabelStyle} />
                 </Checkbox>
               </FilterElement>
               {/* End of Filter Element */}

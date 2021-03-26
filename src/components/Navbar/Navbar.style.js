@@ -128,11 +128,11 @@ export const AvatarWrapper = styled.div`
           color: ${themeGet('text.0', '#2C2C2C')};
           transition: color 0.2s ease-in-out;
           &:hover {
-            color: ${themeGet('primary.0', '#008489')};
+            color: ${themeGet('primary.0', '#616266')};
           }
           &.active {
             font-weight: 700;
-            color: ${themeGet('primary.0', '#008489')};
+            color: ${themeGet('primary.0', '#616266')};
           }
         }
         button {
@@ -145,7 +145,7 @@ export const AvatarWrapper = styled.div`
           background-color: transparent;
           transition: color 0.2s ease-in-out;
           &:hover {
-            color: ${themeGet('primary.0', '#008489')};
+            color: ${themeGet('primary.0', '#616266')};
           }
           &:focus {
             outline: none;
@@ -197,12 +197,12 @@ export const MenuWrapper = styled.div`
           padding: 30px 10px;
         }
         &:hover {
-          color: ${themeGet('primary.0', '#008489')};
+          color: ${themeGet('primary.0', '#616266')};
         }
         &.active {
           font-weight: 700;
-          color: ${themeGet('primary.0', '#008489')};
-          border-bottom: 3px solid ${themeGet('primary.0', '#008489')};
+          color: ${themeGet('primary.0', '#616266')};
+          border-bottom: 3px solid ${themeGet('primary.0', '#616266')};
         }
       }
     }
@@ -244,14 +244,14 @@ export const AuthWrapper = styled.div`
         color: ${themeGet('text.0', '#2C2C2C')};
         transition: color 0.2s ease-in-out;
         &:hover {
-          color: ${themeGet('primary.0', '#008489')};
+          color: ${themeGet('primary.0', '#616266')};
         }
       }
 
       &:last-child {
         a {
           color: ${themeGet('color.1', '#ffffff')};
-          background-color: ${themeGet('primary.0', '#008489')};
+          background-color: ${themeGet('primary.0', '#616266')};
           transition: opacity 0.2s ease;
 
           &:hover {

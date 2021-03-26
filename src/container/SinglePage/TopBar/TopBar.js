@@ -25,7 +25,7 @@ const topBarMenu = [
     target: 'location',
   },
   {
-    name: 'Reviews',
+    name: '이용후기',
     target: 'reviews',
   },
 ];

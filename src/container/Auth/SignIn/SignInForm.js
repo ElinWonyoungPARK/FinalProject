@@ -1,4 +1,5 @@
-import React, { useContext } from 'react';
+import React, { useState } from 'react';
+import axios from "axios";
 import { Link, Redirect } from 'react-router-dom';
 import { useForm, Controller } from 'react-hook-form';
 import { MdLockOpen } from 'react-icons/md';
@@ -7,73 +8,82 @@ import FormControl from 'components/UI/FormControl/FormControl';
 import { AuthContext } from 'context/AuthProvider';
 import { FORGET_PASSWORD_PAGE } from 'settings/constant';
 import { FieldWrapper, SwitchWrapper, Label } from '../Auth.style';
+import {TextField} from '@material-ui/core'
 
 const SignInForm = () => {
-  const { signIn, loggedIn } = useContext(AuthContext);
-  const { control, errors, handleSubmit } = useForm();
-  const onSubmit = (data) => {
-    signIn(data);
-  };
-  if (loggedIn) {
-    return <Redirect to={{ pathname: '/' }} />;
+  const {control} = useForm();
+  const [userid, setUserid] = useState('')
+  const [password, setPassword] = useState('')
+  const API_URL = "http://localhost:8080/api/users/";
+
+  const authHeader = () => {
+    const user = JSON.parse(localStorage.getItem('user'));
+    if (user && user.accessToken) {
+      return { Authorization: 'Bearer ' + user.accessToken }; // for Spring Boot back-end
+      // return { 'x-access-token': user.accessToken };       // for Node.js Express back-end
+    } else {
+      return {};
+    }
   }
 
-  return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <FormControl
-        label="Email"
-        htmlFor="email"
-        error={
-          errors.email && (
-            <>
-              {errors.email?.type === 'required' && (
-                <span>This field is required!</span>
-              )}
-              {errors.email?.type === 'pattern' && (
-                <span>Please enter a valid email address!</span>
-              )}
-            </>
-          )
+  const login = (username, password) => {
+    return axios
+      .post(API_URL + "signin", {
+        username,
+        password
+      })
+      .then(response => {
+        if (response.data.accessToken) {
+          localStorage.setItem("user", JSON.stringify(response.data));
         }
+
+        return response.data;
+      });
+  }
+
+  const logout = () => {
+    localStorage.removeItem("user");
+  }
+
+  const register = (username, email, password) => {
+    return axios.post(API_URL + "signup", {
+      username,
+      email,
+      password
+    });
+  }
+
+  const getCurrentUser = () => {
+    return JSON.parse(localStorage.getItem('user'));;
+  }
+ 
+  return (
+    <form >
+      <FormControl
+        label="ID"
       >
         <Controller
-          as={<Input />}
-          type="email"
-          id="email"
-          name="email"
+          as={<Input
+            onChange = {e => {setUserid(`${e.target.value}`)}}
+          />}
+          id="userid" 
+          name="userid"
           defaultValue=""
           control={control}
-          rules={{
-            required: true,
-            pattern: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
-          }}
+          rules={{ required: true }}
         />
       </FormControl>
       <FormControl
-        label="Password"
-        htmlFor="password"
-        error={
-          errors.password && (
-            <>
-              {errors.password?.type === 'required' && (
-                <span>This field is required!</span>
-              )}
-              {errors.password?.type === 'minLength' && (
-                <span>Password must be at lest 6 characters!</span>
-              )}
-              {errors.password?.type === 'maxLength' && (
-                <span>Password must not be longer than 20 characters!</span>
-              )}
-            </>
-          )
-        }
+        label="비밀번호"
       >
         <Controller
-          as={<Input.Password />}
-          defaultValue=""
-          control={control}
+          as={<Input.Password 
+            onChange = {e => {setPassword(`${e.target.value}`)}}
+          />}
           id="password"
           name="password"
+          defaultValue=""
+          control={control}
           rules={{ required: true, minLength: 6, maxLength: 20 }}
         />
       </FormControl>
@@ -81,21 +91,23 @@ const SignInForm = () => {
         <SwitchWrapper>
           <Controller
             as={<Switch />}
-            name="rememberMe"
+            name="Remember Me"
             defaultValue={false}
             valueName="checked"
             control={control}
           />
-          <Label>Remember Me</Label>
+          <Label>자동로그인</Label>
         </SwitchWrapper>
-        <Link to={FORGET_PASSWORD_PAGE}>Forget Password ?</Link>
+        <Link to={FORGET_PASSWORD_PAGE}>비밀번호 찾기</Link>
       </FieldWrapper>
+      
       <Button
         className="signin-btn"
         type="primary"
         htmlType="submit"
         size="large"
         style={{ width: '100%' }}
+        onClick= {login}
       >
         <MdLockOpen />
         Login

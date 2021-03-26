@@ -43,17 +43,17 @@ const ProfileNavigation = (props) => {
         <Menu className={className}>
           <Menu.Item key="0">
             <NavLink exact to={`${match.url}`}>
-              Listing
+              내 예약목록
             </NavLink>
           </Menu.Item>
           <Menu.Item key="1">
             <NavLink to={`${match.url}${AGENT_PROFILE_FAVOURITE}`}>
-              Favourite
+              내가 찜한 전시
             </NavLink>
           </Menu.Item>
           <Menu.Item key="2">
             <NavLink to={`${match.url}${AGENT_PROFILE_CONTACT}`}>
-              Contact
+              내가 쓴 리뷰
             </NavLink>
           </Menu.Item>
         </Menu>
@@ -89,15 +89,15 @@ const AgentProfileInfo = () => {
   const { data, loading } = useDataApi('/data/agent.json');
   if (isEmpty(data) || loading) return <Loader />;
   const {
-    first_name,
     last_name,
+    first_name,
     content,
     profile_pic,
     cover_pic,
     social_profile,
   } = data[0];
 
-  const username = `${first_name} ${last_name}`;
+  const username = `${last_name} ${first_name}`;
 
   return (
     <Fragment>

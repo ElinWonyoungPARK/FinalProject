@@ -34,11 +34,11 @@ export const RatingMeta = styled.div`
   }
 
   i {
-    color: ${themeGet('primary.0', '#008489')};
+    color: ${themeGet('primary.0', '#616266')};
   }
 
   svg {
-    fill: ${themeGet('primary.0', '#008489')};
+    fill: ${themeGet('primary.0', '#616266')};
   }
 
   strong {
@@ -96,13 +96,13 @@ export const TobBarWrapper = styled.div`
             }
 
             &:hover {
-              color: ${themeGet('primary.0', '#008489')};
+              color: ${themeGet('primary.0', '#616266')};
             }
 
             &.active {
               font-weight: 700;
-              color: ${themeGet('primary.0', '#008489')};
-              border-bottom: 3px solid ${themeGet('primary.0', '#008489')};
+              color: ${themeGet('primary.0', '#616266')};
+              border-bottom: 3px solid ${themeGet('primary.0', '#616266')};
             }
           }
         }
