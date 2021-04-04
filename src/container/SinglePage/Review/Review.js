@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { IoIosStar, IoIosStarOutline, IoIosArrowDown } from 'react-icons/io';
 import { Row, Col, Button, Input, Checkbox, Divider, Modal } from 'antd';
@@ -16,9 +16,10 @@ import ReviewWrapper, {
   ModalTitle,
 } from './Review.style';
 import { Element } from 'react-scroll';
+import axios from 'axios';
 
 const Search = Input.Search;
-const CommentBox = (props) => {
+const CommentBox = ( props ) => {
   const { reviews } = props;
   return reviews && reviews.length !== 0
     ? reviews.map((singleReview, i) => {
@@ -33,9 +34,9 @@ const CommentBox = (props) => {
 };
 
 const Review = (props) => {
+  const [ review, setReview ] = useState([])
   const {
     ratingCount,
-    reviews,
     statusHeadingStyle,
     filterHeadingStyle,
     ratingLabelStyle,
@@ -52,9 +53,22 @@ const Review = (props) => {
   const handleModalClose = (key) => {
     setState({ ...state, [key]: false });
   };
+
   const onChange = (e) => {
     console.log(`checked = ${e.target.checked}`);
   };
+
+  let URL = 'http://localhost:8080/reviews'
+  useEffect(e => {
+    axios.get(URL, )
+    .then((resp) => {
+      setReview(resp.data)
+    })
+    .catch((err) => {
+      alert(`실패`)
+      throw err;
+    })
+  }, [])
 
   return (
     <Element name="reviews" className="reviews">
@@ -269,7 +283,7 @@ const Review = (props) => {
             {/* End of Text Button */}
           </Col>
         </Row>
-        <CommentBox reviews={reviews} />
+        <CommentBox reviews={review} />
       </ReviewWrapper>
     </Element>
   );

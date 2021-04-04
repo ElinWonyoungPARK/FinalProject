@@ -5,7 +5,7 @@ import { ThemeProvider } from 'styled-components';
 import theme from 'themes/default.theme';
 import GlobalStyles from 'themes/global.style';
 import AuthProvider from 'context/AuthProvider';
-import Routes from './router';
+import Routes from './App';
 
 const App = () => (
   <ThemeProvider theme={theme}>

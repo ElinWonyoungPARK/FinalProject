@@ -11,9 +11,9 @@ import {TextField} from '@material-ui/core'
 
 const SignUpForm = () => {
   const {control} = useForm();
-  const [userid, setUserid] = useState('')
-  const [password, setPassword] = useState('')
   const [username, setUsername] = useState('')
+  const [password, setPassword] = useState('')
+  const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [gender, setGender] = useState('')
   const [birthday, setBirthday] = useState('')
@@ -22,16 +22,14 @@ const SignUpForm = () => {
 
   const register = e => {
     e.preventDefault()
-    axios.post(`/users/save`, {
-      userid, password, username, email, gender, birthday, phoneNumber, preferGenre,
-      proxy: {
-        host: 'localhost',
-        port: 8080,
-        protocol: 'http'
-      }
+    axios({
+      url: `http://localhost:8080/users`,
+      method: 'post',
+      headers: {'Content-Type': 'application/json', 'Authorization' : 'JWT fefege..'},
+      data: {username, password, name, email, gender, birthday, phoneNumber, preferGenre}
     })
-    .then(resp => {
-      alert('회원가입 성공')
+      .then(resp => {
+      alert('회원가입 성공'+resp.data)
     })
     .catch(err => {
       alert('회원가입 실패')
@@ -43,12 +41,10 @@ const SignUpForm = () => {
       <FormControl
         label="ID"
       >
-        <Controller
-          as={<Input
-            onChange = {e => {setUserid(`${e.target.value}`)}}
-          />}
-          id="userid" 
-          name="userid"
+        <Input
+            onChange = {e => {setUsername(`${e.target.value}`)}}
+          id="username" 
+          name="username"
           defaultValue=""
           control={control}
           rules={{ required: true }}
@@ -57,10 +53,8 @@ const SignUpForm = () => {
       <FormControl
         label="비밀번호"
       >
-        <Controller
-          as={<Input.Password 
+        <Input
             onChange = {e => {setPassword(`${e.target.value}`)}}
-          />}
           id="password"
           name="password"
           defaultValue=""
@@ -71,12 +65,10 @@ const SignUpForm = () => {
       <FormControl
         label="이름"
       >
-        <Controller
-          as={<Input
-            onChange = {e => {setUsername(`${e.target.value}`)}}
-          />}
-          id="username" 
-          name="username"
+        <Input
+            onChange = {e => {setName(`${e.target.value}`)}}
+          id="name" 
+          name="name"
           defaultValue=""
           control={control}
           rules={{ required: true }}
@@ -85,10 +77,8 @@ const SignUpForm = () => {
       <FormControl
         label="이메일 주소"
       >
-        <Controller
-          as={<Input
+        <Input
             onChange = {e => {setEmail(`${e.target.value}`)}}
-          />}
           id="email" 
           type="email"
           name="email"
@@ -101,10 +91,8 @@ const SignUpForm = () => {
       <FormControl
         label="성별"
       >
-        <Controller
-          as={<Input
+        <Input
             onChange = {e => {setGender(`${e.target.value}`)}}
-          />}
           id="gender" 
           name="gender"
           defaultValue=""
@@ -116,10 +104,8 @@ const SignUpForm = () => {
       <FormControl
         label="생년월일"
       >
-        <Controller
-          as={<Input
+        <Input
             onChange = {e => {setBirthday(`${e.target.value}`)}}
-          />}
           id="birthday" 
           name="birthday"
           defaultValue=""
@@ -131,10 +117,8 @@ const SignUpForm = () => {
       <FormControl
         label="휴대폰 번호"
       >
-        <Controller
-          as={<Input
+        <Input
             onChange = {e => {setPhoneNumber(`${e.target.value}`)}}
-          />}
           id="phoneNumber" 
           name="phoneNumber"
           defaultValue=""
@@ -143,24 +127,35 @@ const SignUpForm = () => {
           rules={{ required: true }}
         />
       </FormControl>
+      <FormControl
+        label="선호장르"
+      >
+        <Input
+            onChange = {e => {setPreferGenre(`${e.target.value}`)}}
+          id="preferGenre" 
+          name="preferGenre"
+          defaultValue=""
+          placeholder="유화, 조각"
+          control={control}
+          rules={{ required: true }}
+        />
+      </FormControl>
       <FieldWrapper>
         <SwitchWrapper>
-          <Controller
+          <Input
             as={<Switch />}
             name="rememberMe"
             defaultValue={false}
             valueName="checked"
-            control={control}
           />
           <Label>아이디 기억하기</Label>
         </SwitchWrapper>
         <SwitchWrapper>
-          <Controller
+          <Input
             as={<Switch />}
             name="termsAndConditions"
             defaultValue={false}
             valueName="checked"
-            control={control}
           />
           <Label>전체 약관에 동의합니다</Label>
         </SwitchWrapper>
