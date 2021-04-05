@@ -58,7 +58,7 @@ const Review = (props) => {
     console.log(`checked = ${e.target.checked}`);
   };
 
-  let URL = 'http://localhost:8080/reviews'
+  let URL = 'http://localhost:8080/reviews/'
   useEffect(e => {
     axios.get(URL, )
     .then((resp) => {

@@ -26,7 +26,6 @@ const CommendCard = (props) => {
         <div className="comment-header">
           <div className="avatar-area">
             <div className="author-avatar">
-              
             </div>
             <div className="author-info">
               <h3 className="author-name">{authorName}</h3>
@@ -54,20 +53,7 @@ const CommendCard = (props) => {
           <p>{content}</p>
         </div>
         <div className="comment-rating">
-          {reviewRating && reviewRating.length !== 0
-            ? reviewRating.map((propsRating, i) => {
-                return (
-                  <div className="rating-widget" key={i}>
-                    <Rating
-                      key={i}
-                      rating={propsRating.rating}
-                      ratingFieldName={propsRating.ratingFieldName}
-                      type="individual"
-                    />
-                  </div>
-                );
-              })
-            : ''}
+          
         </div>
       </div>
     </div>
